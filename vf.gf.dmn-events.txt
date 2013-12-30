@@ -14,3 +14,17 @@
 2013-12-30T16:28:35,INFO,UpdatedLicenseStateEvent,enforcement=soft|licenseType=local|expirationDate=2014-02-28T16:28:35|used=2|available=60|addons=vf.gf.evaluation
 2013-12-30T17:28:35,INFO,UpdatedLicenseStateEvent,enforcement=soft|licenseType=local|expirationDate=2014-02-28T17:28:35|used=2|available=60|addons=vf.gf.evaluation
 2013-12-30T18:21:16,INFO,ComponentStateChangeEvent,instanceIdType=self|instanceId=self|timestamp=2013-12-30T18:21:16|state=off
+2013-12-30T19:12:35,INFO,EventManagerStartedEvent,
+2013-12-30T19:12:35,INFO,LicenseActivatedEvent,expirationDate=unset|expirationType=floating-eval|serialNumber=G04E0-MFK43-M8E1H-0ZARK-AV25A|allowedVersions=vf.gf.dmn-7+vf.gf.dmn-6|available=60
+2013-12-30T19:12:35,INFO,LicenseActivatedEvent,expirationDate=unset|expirationType=floating-eval|serialNumber=G04E0-MFK43-M8E1H-0ZARK-AV25A|allowedVersions=vf.gf.dmn-7+vf.gf.dmn-6|available=60
+2013-12-30T19:12:36,INFO,UpdatedLicenseStateEvent,enforcement=soft|licenseType=local|expirationDate=permanent|used=0|available=60|addons=vf.gf.evaluation
+2013-12-30T19:14:05,INFO,ComponentStateChangeEvent,instanceIdType=self|instanceId=self|timestamp=2013-12-30T19:12:36|state=on
+2013-12-30T19:14:05,INFO,UpdatedLicenseStateEvent,enforcement=soft|licenseType=local|expirationDate=2014-02-28T19:14:05|used=2|available=60|addons=vf.gf.evaluation
+2013-12-30T19:17:42,INFO,ComponentStateChangeEvent,instanceIdType=self|instanceId=self|timestamp=2013-12-30T19:17:42|state=off
+2013-12-30T19:18:42,INFO,EventManagerStartedEvent,
+2013-12-30T19:18:42,INFO,LicenseActivatedEvent,expirationDate=unset|expirationType=floating-eval|serialNumber=G04E0-MFK43-M8E1H-0ZARK-AV25A|allowedVersions=vf.gf.dmn-7+vf.gf.dmn-6|available=60
+2013-12-30T19:18:42,INFO,LicenseActivatedEvent,expirationDate=unset|expirationType=floating-eval|serialNumber=G04E0-MFK43-M8E1H-0ZARK-AV25A|allowedVersions=vf.gf.dmn-7+vf.gf.dmn-6|available=60
+2013-12-30T19:18:42,INFO,UpdatedLicenseStateEvent,enforcement=soft|licenseType=local|expirationDate=permanent|used=0|available=60|addons=vf.gf.evaluation
+2013-12-30T19:20:09,INFO,ComponentStateChangeEvent,instanceIdType=self|instanceId=self|timestamp=2013-12-30T19:18:42|state=on
+2013-12-30T19:20:09,INFO,UpdatedLicenseStateEvent,enforcement=soft|licenseType=local|expirationDate=2014-02-28T19:20:09|used=2|available=60|addons=vf.gf.evaluation
+2013-12-30T19:31:03,INFO,ComponentStateChangeEvent,instanceIdType=self|instanceId=self|timestamp=2013-12-30T19:31:03|state=off
