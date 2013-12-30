@@ -51,11 +51,7 @@ public class CheckoutController {
 		OrderDetails order = basket
 				.createOrderDetailsWithCustomerInfo(customer);
 		
-//		java.lang.NullPointerException
-//		tut.webdata.persistence.domain.Order.fromOrderDetails(Order.java:117)
-//		tut.webdata.persistence.services.OrderPersistenceEventHandler.createOrder(OrderPersistenceEventHandler.java:37)
-//		tut.webdata.core.services.OrderEventHandler.createOrder(OrderEventHandler.java:45)
-//		tut.webdata.web.controller.CheckoutController.doCheckout(CheckoutController.java:54)
+//		org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'transactionManager' must be of type [org.springframework.transaction.PlatformTransactionManager], but was actually of type [org.springframework.data.gemfire.listener.ContinuousQueryListenerContainer]
 		
 		OrderCreatedEvent event = orderService
 				.createOrder(new CreateOrderEvent(order));
