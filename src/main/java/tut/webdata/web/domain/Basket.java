@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.context.annotation.Scope;
@@ -72,6 +73,7 @@ public class Basket  implements Serializable {
 	public OrderDetails createOrderDetailsWithCustomerInfo(CustomerInfo info) {
 	    OrderDetails order = new OrderDetails();
 	    BeanUtils.copyProperties(info, order);
+	    order.setKey(UUID.randomUUID());
 	    order.setDateTimeOfSubmission(new Date());
 	    copyItemsFromBasketToOrder(order);
 		return order;

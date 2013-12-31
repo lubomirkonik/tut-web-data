@@ -38,9 +38,9 @@ public class Order {
   
 //  private String userName;
 
-  public Order() {
-		id = UUID.randomUUID().toString();
-  }
+//  public Order() {
+//		id = UUID.randomUUID().toString();
+//  }
   
   public void setId(String id) {
     this.id = id;
@@ -118,7 +118,7 @@ public class Order {
   public static Order fromOrderDetails(OrderDetails orderDetails) {
     Order order = new Order();
 
-//    order.id = orderDetails.getKey().toString();
+    order.id = orderDetails.getKey().toString();
     order.dateTimeOfSubmission = orderDetails.getDateTimeOfSubmission();
     order.orderItems = orderDetails.getOrderItems();
     order.name = orderDetails.getName();
