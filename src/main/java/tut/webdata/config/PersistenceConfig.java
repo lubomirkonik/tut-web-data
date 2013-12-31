@@ -59,13 +59,9 @@ public class PersistenceConfig {
 	//@Autowired
 //	  MenuItemRepository menuItemRepository;
 	
-//	@Bean
-//	public MenuItemRepoService menuItemRepoService() {
-//		menuItemRepository.save(menuItem("YM1", new BigDecimal("1.99"), 11, "Yummy Noodles"));
-//		menuItemRepository.save(menuItem("YM3", new BigDecimal("3.99"), 13, "Low cal Yummy Noodles"));
-//		menuItemRepository.save(menuItem("YM2", new BigDecimal("2.99"), 12, "Special Yummy Noodles"));
-//		return new MenuItemRepoService();
-//	}
+//	  menuItemRepository.save(menuItem("YM1", new BigDecimal("1.99"), 11, "Yummy Noodles"));
+//	  menuItemRepository.save(menuItem("YM3", new BigDecimal("3.99"), 13, "Low cal Yummy Noodles"));
+//	  menuItemRepository.save(menuItem("YM2", new BigDecimal("2.99"), 12, "Special Yummy Noodles"));
 	
 	
 //	private Map<String, MenuItem> defaultMenu() {
