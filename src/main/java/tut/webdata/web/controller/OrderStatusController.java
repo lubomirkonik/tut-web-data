@@ -1,5 +1,6 @@
 package tut.webdata.web.controller;
 
+import java.util.Date;
 import java.util.UUID;
 
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ import tut.webdata.events.orders.OrderDetailsEvent;
 import tut.webdata.events.orders.OrderStatusEvent;
 import tut.webdata.events.orders.RequestOrderDetailsEvent;
 import tut.webdata.events.orders.RequestOrderStatusEvent;
+import tut.webdata.persistence.repository.OrderStatusRepository;
 import tut.webdata.web.domain.OrderStatus;
 
 @Controller
@@ -27,6 +29,10 @@ public class OrderStatusController {
 
 	@Autowired
 	private OrderService orderService;
+	
+	//fixture
+	@Autowired
+	private OrderStatusRepository orderStatusRepository;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String orderStatus(@ModelAttribute("orderStatus") OrderStatus orderStatus) {
@@ -37,11 +43,25 @@ public class OrderStatusController {
 	@ModelAttribute("orderStatus")
 	private OrderStatus getOrderStatus(@PathVariable("orderId") String orderId) {
 		OrderDetailsEvent orderDetailsEvent = orderService.requestOrderDetails(new RequestOrderDetailsEvent(UUID.fromString(orderId)));
+//		java.lang.NullPointerException
+//		tut.webdata.web.controller.OrderStatusController.getOrderStatus(OrderStatusController.java:55)
+//		OrderStatusEvent orderStatusEvent = orderService.requestOrderStatus(new RequestOrderStatusEvent(UUID.fromString(orderId)));
+
+//		SAME java.lang.NullPointerException
+		orderStatusRepository.save(orderReceived(UUID.fromString(orderId)));
 		OrderStatusEvent orderStatusEvent = orderService.requestOrderStatus(new RequestOrderStatusEvent(UUID.fromString(orderId)));
+
 		OrderStatus status = new OrderStatus();
 		status.setName(orderDetailsEvent.getOrderDetails().getName());
 		status.setOrderId(orderId);
+		
 		status.setStatus(orderStatusEvent.getOrderStatus().getStatus());
+//		status.setStatus("Order Received");
+		
 		return status;
+	}
+	
+	private static tut.webdata.persistence.domain.OrderStatus orderReceived(UUID orderId) {
+		return new tut.webdata.persistence.domain.OrderStatus(orderId, UUID.randomUUID(), new Date(), "Order Received");
 	}
 }
