@@ -37,10 +37,6 @@ public class Order {
   private String postcode;
   
 //  private String userName;
-
-//  public Order() {
-//		id = UUID.randomUUID().toString();
-//  }
   
   public void setId(String id) {
     this.id = id;

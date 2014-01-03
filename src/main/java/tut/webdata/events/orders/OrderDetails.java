@@ -11,13 +11,12 @@ public class OrderDetails {
   private Date dateTimeOfSubmission;
   private Map<String, Integer> orderItems;
   
-  //TODO implement OrderDetails props
   private String name;
   private String address1;
   private String postcode;
   
 //  private String userName;
-  
+
 
   public OrderDetails() {
     key = null;
