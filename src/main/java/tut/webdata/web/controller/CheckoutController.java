@@ -52,6 +52,7 @@ public class CheckoutController {
 				.createOrderDetailsWithCustomerInfo(customer);
 		
 //		org.springframework.beans.factory.BeanNotOfRequiredTypeException: Bean named 'transactionManager' must be of type [org.springframework.transaction.PlatformTransactionManager], but was actually of type [org.springframework.data.gemfire.listener.ContinuousQueryListenerContainer]
+//		'transactionManager' changed to 'tM'
 		
 		OrderCreatedEvent event = orderService
 				.createOrder(new CreateOrderEvent(order));
