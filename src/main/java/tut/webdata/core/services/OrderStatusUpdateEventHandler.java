@@ -1,6 +1,4 @@
 package tut.webdata.core.services;
-
-import tut.webdata.core.services.OrderStatusUpdateService;
 import tut.webdata.events.orders.OrderStatusEvent;
 import tut.webdata.events.orders.SetOrderStatusEvent;
 
