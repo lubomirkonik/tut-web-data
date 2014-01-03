@@ -24,7 +24,7 @@ public class CoreConfig {
 	}
 	
 	@Bean
-	public OrderStatusUpdateService orderStatusUpdateService() { //param. OrderPersistenceService orderPersistenceService
+	public OrderStatusUpdateService orderStatusUpdateService() {
 		return new OrderStatusUpdateEventHandler();
 	}
 }
