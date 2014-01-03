@@ -1,6 +1,5 @@
 package tut.webdata.web.controller;
 
-import java.util.Date;
 import java.util.UUID;
 
 import org.slf4j.Logger;
@@ -43,25 +42,13 @@ public class OrderStatusController {
 	@ModelAttribute("orderStatus")
 	private OrderStatus getOrderStatus(@PathVariable("orderId") String orderId) {
 		OrderDetailsEvent orderDetailsEvent = orderService.requestOrderDetails(new RequestOrderDetailsEvent(UUID.fromString(orderId)));
-//		java.lang.NullPointerException
-//		tut.webdata.web.controller.OrderStatusController.getOrderStatus(OrderStatusController.java:55)
-//		OrderStatusEvent orderStatusEvent = orderService.requestOrderStatus(new RequestOrderStatusEvent(UUID.fromString(orderId)));
-
-//		SAME java.lang.NullPointerException
-		orderStatusRepository.save(orderReceived(UUID.fromString(orderId)));
-		OrderStatusEvent orderStatusEvent = orderService.requestOrderStatus(new RequestOrderStatusEvent(UUID.fromString(orderId)));
+		OrderStatusEvent orderStatusEvent = orderService.requestOrderStatusByOrderId(new RequestOrderStatusEvent(UUID.fromString(orderId)));
 
 		OrderStatus status = new OrderStatus();
 		status.setName(orderDetailsEvent.getOrderDetails().getName());
 		status.setOrderId(orderId);
-		
 		status.setStatus(orderStatusEvent.getOrderStatus().getStatus());
-//		status.setStatus("Order Received");
 		
 		return status;
-	}
-	
-	private static tut.webdata.persistence.domain.OrderStatus orderReceived(UUID orderId) {
-		return new tut.webdata.persistence.domain.OrderStatus(orderId, UUID.randomUUID(), new Date(), "Order Received");
 	}
 }

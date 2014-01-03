@@ -47,7 +47,7 @@ public class OrderEventHandler implements OrderService {
     //TODO, where should this go?
     OrderStatusEvent orderStatusEvent = ordersPersistenceService.setOrderStatus(
         new SetOrderStatusEvent(order.getKey(), new OrderStatusDetails(order.getKey(),
-        UUID.randomUUID(), new Date(), "Order Created")));
+        UUID.randomUUID(), new Date(), "Order Received")));
 
     return event;
   }  
@@ -90,5 +90,10 @@ public class OrderEventHandler implements OrderService {
   @Override
   public OrderStatusEvent requestOrderStatus(RequestOrderStatusEvent requestOrderDetailsEvent) {
     return ordersPersistenceService.requestOrderStatus(requestOrderDetailsEvent);
+  }
+  
+  @Override
+  public OrderStatusEvent requestOrderStatusByOrderId(RequestOrderStatusEvent requestOrderDetailsEvent) {
+	return ordersPersistenceService.requestOrderStatusByOrderId(requestOrderDetailsEvent);
   }
 }

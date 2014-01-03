@@ -28,7 +28,7 @@ public class OrderPersistenceEventHandler implements OrderPersistenceService {
     OrderStatus status = OrderStatus.fromStatusDetails(event.getOrderStatus());
 
     status = orderStatusRepository.save(status);
-    // mozno nie je potrebne vratit objekt
+    
     return new OrderStatusEvent(status.getId(), status.toStatusDetails());
   }
 
@@ -159,4 +159,15 @@ public class OrderPersistenceEventHandler implements OrderPersistenceService {
 
     return new OrderStatusEvent(requestOrderDetailsEvent.getKey(), status.toStatusDetails());
   }  
+  
+  @Override
+  public OrderStatusEvent requestOrderStatusByOrderId(RequestOrderStatusEvent requestOrderStatusEvent) {
+	OrderStatus status = orderStatusRepository.findByOrderId(requestOrderStatusEvent.getKey());
+	
+	if (status == null) {
+		return OrderStatusEvent.notFound(requestOrderStatusEvent.getKey());
+	}
+	
+	return new OrderStatusEvent(requestOrderStatusEvent.getKey(), status.toStatusDetails());
+  }
 }

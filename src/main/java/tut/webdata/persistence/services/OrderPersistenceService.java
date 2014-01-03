@@ -9,6 +9,8 @@ public interface OrderPersistenceService {
   public OrderDetailsEvent requestOrderDetails(RequestOrderDetailsEvent requestOrderDetailsEvent);
 
   public OrderStatusEvent requestOrderStatus(RequestOrderStatusEvent requestOrderStatusEvent);
+  
+  public OrderStatusEvent requestOrderStatusByOrderId(RequestOrderStatusEvent requestOrderStatusEvent);
 
   public OrderCreatedEvent createOrder(CreateOrderEvent event);
 
