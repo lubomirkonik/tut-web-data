@@ -53,16 +53,7 @@ public class PersistenceConfig {
 //		menuItemRepository.save(menuItem("YM3", new BigDecimal("3.99"), 13, "Low cal Yummy Noodles"));
 //		menuItemRepository.save(menuItem("YM2", new BigDecimal("2.99"), 12, "Special Yummy Noodles"));
 		return new MenuPersistenceEventHandler(menuItemRepository);
-	}
-
-//	TEST THIS
-	//@Autowired
-//	  MenuItemRepository menuItemRepository;
-	
-//	  menuItemRepository.save(menuItem("YM1", new BigDecimal("1.99"), 11, "Yummy Noodles"));
-//	  menuItemRepository.save(menuItem("YM3", new BigDecimal("3.99"), 13, "Low cal Yummy Noodles"));
-//	  menuItemRepository.save(menuItem("YM2", new BigDecimal("2.99"), 12, "Special Yummy Noodles"));
-	
+	}	
 	
 //	private Map<String, MenuItem> defaultMenu() {
 //		Map<String, MenuItem> items = new HashMap<String, MenuItem>();
